@@ -1,0 +1,15 @@
+单例模式
+
+Java实现单例模式有很多种方法，但是比较简单的一个慢启动实现如下：
+```java
+private YoObject() {
+}
+
+private static class SingleTonHolder {
+    private static final singleton = new YoObject();
+}
+
+public static YoObject getSingleTon() {
+    return SingleTonHolder.singleton;
+}
+```
