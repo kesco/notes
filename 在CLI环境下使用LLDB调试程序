@@ -113,4 +113,145 @@ Current breakpoints:
 ```
 # 启动调试程序
 
+1. 启动
+设置好断点我们就可以开始调试程序了，启动程序很简单，直接一条`run`命令既可。
+{{{sh
+# run命令就是启动程序
+(lldb) run
+Process 11500 launched: '/Users/casa/Playground/algorithm/leetcode/DebugDemo/DebugDemo.run' (x86_64)
+Process 11500 stopped   # 这里执行到断点了
+* thread #1: tid = 0x1af357, 0x0000000100000a64 DebugDemo.run`main + 68 at DebugDemo.c:8, queue = 'com.apple.main-thread', stop reason = breakpoint 2.1
+    frame #0: 0x0000000100000a64 DebugDemo.run`main + 68 at DebugDemo.c:8
+   5    void yell(void);
+   6    
+   7    int main () {
+-> 8        size_t result_array[2] = {0, 0};  # 这一行前面的箭头表示调试器在这里停住了
+   9    
+   10       FILE *file_handler = fopen("TestData", "r");
+   11       json_error_t error;
+        }
+}}}
+2. 下一步、步入、步出、继续执行
+{{{sh
+# 下一步 (next 或 n)
+(lldb) next
+Process 11500 stopped
+* thread #1: tid = 0x1af357, 0x0000000100000a7c DebugDemo.run`main + 92 at DebugDemo.c:10, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000a7c DebugDemo.run`main + 92 at DebugDemo.c:10
+   7    int main () {
+   8        size_t result_array[2] = {0, 0};
+   9    
+-> 10       FILE *file_handler = fopen("TestData", "r");
+   11       json_error_t error;
+   12   
+   13       json_t *root = json_loadf(file_handler, JSON_DECODE_ANY, &error);
 
+#---------------------------------------------------------------------------
+
+# 步入(step 或 s)
+Process 11668 stopped
+* thread #1: tid = 0x1b4e9d, 0x0000000100000c06 DebugDemo.run`main + 486 at DebugDemo.c:29, queue = 'com.apple.main-thread', stop reason = breakpoint 3.1
+    frame #0: 0x0000000100000c06 DebugDemo.run`main + 486 at DebugDemo.c:29
+   26               printf("input array is %"JSON_INTEGER_FORMAT"\n", json_integer_value(item));
+   27           
+                }
+   28   
+-> 29           yell();
+   30   
+   31           json_array_foreach(input_array, index, item) {
+   32
+
+(lldb) step
+Process 11668 stopped
+* thread #1: tid = 0x1b4e9d, 0x0000000100000e1f DebugDemo.run`yell + 15 at DebugDemo.c:57, queue = 'com.apple.main-thread', stop reason = step in
+    frame #0: 0x0000000100000e1f DebugDemo.run`yell + 15 at DebugDemo.c:57
+   54   
+   55   void yell()
+   56   {
+-> 57       printf("here i am yelling\n");
+   58   
+        }
+
+#---------------------------------------------------------------------------
+
+# 步出(finish)
+(lldb) finish
+here i am yelling
+Process 11668 stopped
+* thread #1: tid = 0x1b4e9d, 0x0000000100000c0b DebugDemo.run`main + 491 at DebugDemo.c:31, queue = 'com.apple.main-thread', stop reason = step out
+    frame #0: 0x0000000100000c0b DebugDemo.run`main + 491 at DebugDemo.c:31
+   28   
+   29           yell();
+   30   
+-> 31           json_array_foreach(input_array, index, item) {
+   32   
+   33               result_array[0] = index;
+   34               json_int_t value = json_integer_value(item);
+
+#---------------------------------------------------------------------------
+
+# 继续执行到下一个断点停, 后面没有断点的话就跑完了（continue 或 c）
+(lldb) continue
+Process 11668 resuming
+result is 2, 3
+Process 11668 exited with status = 0 (0x00000000)
+
+#---------------------------------------------------------------------------
+                                                                                                                                             }
+                }
+}}}
+3. 查看变量、跳帧查看变量
+{{{sh
+# 使用po或p，po一般用来输出指针指向的那个对象，p一般用来输出基础变量。普通数组两者都可用
+Process 11717 stopped
+* thread #1: tid = 0x1b7afc, 0x0000000100000a7c DebugDemo.run`main + 92 at DebugDemo.c:10, queue = 'com.apple.main-thread', stop reason = step over
+    frame #0: 0x0000000100000a7c DebugDemo.run`main + 92 at DebugDemo.c:10
+   7    int main () {
+   8        size_t result_array[2] = {0, 0};
+   9    
+-> 10       FILE *file_handler = fopen("TestData", "r");
+   11       json_error_t error;
+   12   
+   13       json_t *root = json_loadf(file_handler, JSON_DECODE_ANY, &error);
+
+(lldb) po result_array
+([0] = 0, [1] = 0)
+
+(lldb) p result_array
+(size_t [2]) $2 = ([0] = 0, [1] = 0)
+
+#---------------------------------------------------------------------------
+
+# 查看所有帧(bt)
+(lldb) bt
+* thread #1: tid = 0x1bb7dc, 0x0000000100000e1f DebugDemo.run`yell + 15 at DebugDemo.c:57, queue = 'com.apple.main-thread', stop reason = step in
+  * frame #0: 0x0000000100000e1f DebugDemo.run`yell + 15 at DebugDemo.c:57
+    frame #1: 0x0000000100000c0b DebugDemo.run`main + 491 at DebugDemo.c:29
+    frame #2: 0x00007fff99d175c9 libdyld.dylib`start + 1
+
+#---------------------------------------------------------------------------
+
+# 跳帧（frame select）
+(lldb) frame select 1
+frame #1: 0x0000000100000c0b DebugDemo.run`main + 491 at DebugDemo.c:29
+   26               printf("input array is %"JSON_INTEGER_FORMAT"\n", json_integer_value(item));
+   27           }
+   28   
+-> 29           yell();
+   30   
+   31           json_array_foreach(input_array, index, item) {
+   32
+
+#---------------------------------------------------------------------------
+
+# 查看当前帧中所有变量的值（frame variable）
+(lldb) frame variable
+
+(size_t [2]) result_array = ([0] = 0, [1] = 0)
+(FILE *) file_handler = 0x00007fff7cfdd070
+(json_error_t) error = (line = 0, column = 0, position = 0, source = "", text = "?)
+(json_t *) root = 0x0000000000000000
+                                                                                                                                                                                                          
+#--------------------------------------------------------------------------
+}}}
+以上就是`lldb`的基本用法，详细文档可以看下官方文档：http://lldb.llvm.org/tutorial.html
