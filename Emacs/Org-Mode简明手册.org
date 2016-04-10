@@ -131,6 +131,13 @@ Org可以很简洁的显示笔记中的代码块，虽然不如Markdown =_+。
 像上面在 *begin* 和 *end* 之间包裹代码既可。
 同时，Org支持代码高亮，只需在#+begin_src后既可。
 
+*** 引用
+
+Org的引用文字也是使用结构标识符来声明的：
+
+#+begin_quote
+#+end_quote
+
 * Org-Capture
 
 Org-Mode可以开启一个临时Buffer来记录突发的灵感，这个功能就是 *Org-Capture* ，我们可以这样设置 *Org-Capture* 的模板：
