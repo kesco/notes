@@ -1,0 +1,975 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>在CLI环境下使用LLDB调试程序 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="探讨闭包.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Android/">
+            
+                <a href="../Android/">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Android/搭建Android开发环境.html">
+            
+                <a href="../Android/搭建Android开发环境.html">
+            
+                    
+                    搭建Android开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Android/Android发送短信.html">
+            
+                <a href="../Android/Android发送短信.html">
+            
+                    
+                    Android发送短信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../Android/Android判断手机号码分属.html">
+            
+                <a href="../Android/Android判断手机号码分属.html">
+            
+                    
+                    Android判断手机号码分属
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../Android/Android列表控件使用心得.html">
+            
+                <a href="../Android/Android列表控件使用心得.html">
+            
+                    
+                    Android列表控件使用心得
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../Android/Linux系统连接Android设备.html">
+            
+                <a href="../Android/Linux系统连接Android设备.html">
+            
+                    
+                    Linux系统连接Android设备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../Android/Xposed FrameWork初探.html">
+            
+                <a href="../Android/Xposed FrameWork初探.html">
+            
+                    
+                    Xposed FrameWork初探
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    C\C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.2.1" data-path="在CLI环境下使用LLDB调试程序.html">
+            
+                <a href="在CLI环境下使用LLDB调试程序.html">
+            
+                    
+                    在CLI环境下使用LLDB调试程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="探讨闭包.html">
+            
+                <a href="探讨闭包.html">
+            
+                    
+                    探讨闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="Boost学习笔记.html">
+            
+                <a href="Boost学习笔记.html">
+            
+                    
+                    Boost学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="C宏定义入门.html">
+            
+                <a href="C宏定义入门.html">
+            
+                    
+                    C语言宏定义入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="C语言标准库.html">
+            
+                <a href="C语言标准库.html">
+            
+                    
+                    C语言标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="C++异常处理.html">
+            
+                <a href="C++异常处理.html">
+            
+                    
+                    C++异常处理详情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="C++ Standard Library深入解析.html">
+            
+                <a href="C++ Standard Library深入解析.html">
+            
+                    
+                    C++ Standard Library深入解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="Cmake实战.html">
+            
+                <a href="Cmake实战.html">
+            
+                    
+                    Cmake实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="Effective C++.html">
+            
+                <a href="Effective C++.html">
+            
+                    
+                    Effective C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="Effective C.html">
+            
+                <a href="Effective C.html">
+            
+                    
+                    Effective C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.11" data-path="Pthread实战.html">
+            
+                <a href="Pthread实战.html">
+            
+                    
+                    Pthread实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../Emacs/">
+            
+                <a href="../Emacs/">
+            
+                    
+                    Emacs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../Emacs/Org-Mode简明手册.html">
+            
+                <a href="../Emacs/Org-Mode简明手册.html">
+            
+                    
+                    Org-Mode简明手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../Git/Git使用心得.html">
+            
+                <a href="../Git/Git使用心得.html">
+            
+                    
+                    Git使用心得
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../Java/">
+            
+                <a href="../Java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../Java/单例模式.html">
+            
+                <a href="../Java/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../Java/远程调试Java程序.html">
+            
+                <a href="../Java/远程调试Java程序.html">
+            
+                    
+                    远程调试Java程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../Linux/">
+            
+                <a href="../Linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../Linux/使用SSL证书登陆Linux服务器.html">
+            
+                <a href="../Linux/使用SSL证书登陆Linux服务器.html">
+            
+                    
+                    使用SSL证书登陆Linux服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../Linux/调换CapsLk键和Ctrl键.html">
+            
+                <a href="../Linux/调换CapsLk键和Ctrl键.html">
+            
+                    
+                    调换CapsLk键和Ctrl键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../Linux/Alpine Linux使用笔记.html">
+            
+                <a href="../Linux/Alpine Linux使用笔记.html">
+            
+                    
+                    Alpine Linux使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../Linux/Arch Linux使用笔记.html">
+            
+                <a href="../Linux/Arch Linux使用笔记.html">
+            
+                    
+                    Arch Linux使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../Linux/Docker学习笔记.html">
+            
+                <a href="../Linux/Docker学习笔记.html">
+            
+                    
+                    Docker使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../Linux/Vagrant简易教程.html">
+            
+                <a href="../Linux/Vagrant简易教程.html">
+            
+                    
+                    Vagrant简易教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../Linux/Vim使用心得.html">
+            
+                <a href="../Linux/Vim使用心得.html">
+            
+                    
+                    Vim使用心得
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../Web/">
+            
+                <a href="../Web/">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../Web/定制Ghost博客.html">
+            
+                <a href="../Web/定制Ghost博客.html">
+            
+                    
+                    定制Ghost博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >在CLI环境下使用LLDB调试程序</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5728;cli&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;lldb&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;">&#x5728;CLI&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;LLDB&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;</h1><p>&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;&#x90FD;&#x662F;&#x4F7F;&#x7528;IDE&#x6765;&#x8C03;&#x8BD5;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x6CA1;&#x6CD5;&#x7528;&#x5230;IDE&#xFF0C;&#x6BD4;&#x5982;&#x5728;Linux&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x6216;&#x8005;IDE&#x4E0A;&#x538B;&#x6839;&#x6CA1;&#x6709;&#x96C6;&#x6210;&#x8FD9;&#x79CD;&#x8BED;&#x8A00;&#x7684;&#x8C03;&#x8BD5;&#x5668;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x7528;&#x5230;CLI&#x73AF;&#x5883;&#x4E0A;&#x542F;&#x52A8;&#x8C03;&#x8BD5;&#x5668;&#x6765;&#x8C03;&#x8BD5;&#x5566;&#x3002;&#x6700;&#x8FD1;&#x56E0;&#x4E3A;&#x8981;&#x5199;C&#x548C;CPP&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x800C;&#x5728;Mac&#x4E0A;&#x7528;&#x4E0D;&#x60EF;Xcode&#x548C;Clion(&#x8FD8;&#x662F;&#x4E60;&#x60EF;&#x7528;Vim=_+)&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x80FD;&#x5728;&#x5F00;&#x4E2A;iTerm&#x7528;<code>lldb</code>&#x6765;&#x8C03;&#x4E86;&#x3002;</p><h2 id="&#x5F00;&#x59CB;&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;">&#x5F00;&#x59CB;&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;</h2><ol><li>&#x76F4;&#x63A5;&#x7528;<code>lldb</code>&#x6765;&#x542F;&#x52A8;&#x8C03;&#x8BD5;&#x7684;&#x7A0B;&#x5E8F;
+</li></ol>
+<pre><code class="lang-sh">lldb app           <span class="hljs-comment"># app&#x662F;&#x7F16;&#x8BD1;&#x51FA;&#x6765;&#x7684;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</span></code></pre>
+<ol><li>&#x8C03;&#x8BD5;&#x5E26;&#x53C2;&#x6570;&#x7684;&#x7A0B;&#x5E8F;
+</li></ol>
+<pre><code class="lang-sh">lldb -- app 1 2 3  <span class="hljs-comment"># &#x7B49;&#x4E8E;./app 1 2 3</span></code></pre>
+<ol><li>&#x8C03;&#x8BD5;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x8FDB;&#x7A0B;
+</li></ol>
+<pre><code class="lang-sh">lldb               <span class="hljs-comment"># &#x5148;&#x542F;&#x52A8;LLDB</span></code></pre>
+<p>&#x8FDB;&#x5165;&#x4EE5;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>lldb</code>&#x5185;&#x90E8;&#x547D;&#x4EE4;&#x6302;&#x5230;&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x8FDB;&#x7A0B;&#x4E0A;&#x53BB;&#xFF1A;</p><pre><code class="lang-sh"><span class="hljs-comment"># &#x7136;&#x540E;&#x4F60;&#x627E;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x7684;pid&#x51FA;&#x6765;&#xFF0C;&#x6211;&#x627E;&#x7684;&#x662F;QQ&#x97F3;&#x4E50;</span>
+<span class="hljs-comment"># &#x4F60;&#x53EF;&#x4EE5;ps aux | grep casa &#xFF08;casa&#x662F;&#x6211;&#x7684;&#x7528;&#x6237;&#x540D;&#xFF09; &#x5728;&#x8FD9;&#x4E2A;&#x5217;&#x8868;&#x91CC;&#x9762;&#x6311;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;pid</span>
+<span class="hljs-comment"># &#x8F93;&#x5165;process attach --pid &#x4F60;&#x627E;&#x5230;&#x7684;pid&#xFF0C;&#x6765;&#x628A;&#x8C03;&#x8BD5;&#x5668;&#x6302;&#x5230;&#x8FD9;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E0A;&#x53BB;&#x8C03;&#x8BD5;</span>
+(lldb) process attach --pid 9939        <span class="hljs-comment"># &#x7B80;&#x5199;&#x547D;&#x4EE4;: attach -p 9939</span>
+                                        <span class="hljs-comment">#       &#x6216;  pro att -p 9939</span>
+<span class="hljs-comment"># &#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x544A;&#x8BC9;lldb&#x4F60;&#x8981;&#x6302;&#x5728;&#x90A3;&#x4E2A;&#x8FDB;&#x7A0B;&#x540D;&#x4E0B;</span>
+(lldb) process attach --name Safari     <span class="hljs-comment"># &#x7B80;&#x5199;&#x547D;&#x4EE4;: attach -n Safari</span>
+                                                &#x6216;  pro att -n Safari</code></pre>
+<h2 id="&#x67E5;&#x770B;&#x4EE3;&#x7801;">&#x67E5;&#x770B;&#x4EE3;&#x7801;</h2><p>&#x5982;&#x679C;&#x6784;&#x5EFA;&#x7684;&#x7A0B;&#x5E8F;&#x662F;&#x5728;<code>Debug</code>&#x6A21;&#x5F0F;&#x4E0B;&#x6784;&#x5EFA;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>lldb</code>&#x6765;&#x67E5;&#x770B;&#x7A0B;&#x5E8F;&#x7684;&#x4EE3;&#x7801;&#x3002;</p><ol><li>&#x7528;<code>list</code>&#x547D;&#x4EE4;&#x770B;&#x4EE3;&#x7801;&#xFF0C;&#x7B80;&#x5199;&#x4E3A;<code>l</code>&#xFF0C;&#x4E00;&#x76F4;<code>list</code>&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x4F1A;&#x5F80;&#x4E0B;&#x663E;&#x793A;&#x4EE3;&#x7801;&#x3002;&#x5982;&#x679C;&#x60F3;&#x4ECE;M&#x884C;&#x5F00;&#x59CB;&#x770B;&#x7684;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;<code>list M</code>&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;
+</li>
+<li>&#x8981;&#x770B;&#x5176;&#x5B83;&#x6587;&#x4EF6;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53EA;&#x9700;&#x8981;<code>list file</code>&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x4E4B;&#x540E;&#x6309;<code>list</code>&#x7684;&#x8BDD;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x4ECE;&#x8BE5;&#x6587;&#x4EF6;&#x5F80;&#x4E0B;&#x770B;&#x3002;
+</li>
+<li>&#x8981;&#x770B;&#x67D0;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53EA;&#x9700;&#x8981;<code>list method</code>&#x65E2;&#x53EF;&#x3002;
+</li></ol>
+<h2 id="&#x4E0B;&#x65AD;&#x70B9;">&#x4E0B;&#x65AD;&#x70B9;</h2><p>&#x8C03;&#x8BD5;&#x5FC5;&#x987B;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x6253;&#x65AD;&#x70B9;&#x5566;&#xFF0C;&#x4E0D;&#x7136;&#x5C31;&#x4F1A;&#x773C;&#x82B1;&#x82B1;&#x7684;&#x770B;&#x7740;&#x7A0B;&#x5E8F;&#x8DD1;&#x8FC7;&#x53BB;&#x54AF;&#x3002;CLI&#x4E0B;&#x6253;&#x65AD;&#x70B9;&#x662F;&#x8981;&#x6253;&#x547D;&#x4EE4;&#x7684;&#xFF0C;&#x8FD9;&#x70B9;&#x662F;&#x6BD4;IDE&#x9EBB;&#x70E6;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E5F;&#x9EBB;&#x70E6;&#x4E0D;&#x4E86;&#x54EA;&#x91CC;&#x53BB;&#x3002;</p><ol><li>&#x6839;&#x636E;&#x6587;&#x4EF6;&#x540D;&#x548C;&#x884C;&#x53F7;&#x4E0B;&#x65AD;&#x70B9;&#x3002;
+</li></ol>
+<pre><code class="lang-sh">(lldb) breakpoint <span class="hljs-built_in">set</span> --file DebugDemo.c --line 10
+Breakpoint 1: <span class="hljs-built_in">where</span> = DebugDemo.run`main + 92 at DebugDemo.c:10, address = 0x0000000100000a7c</code></pre>
+<ol><li>&#x6839;&#x636E;&#x51FD;&#x6570;&#x540D;&#x4E0B;&#x65AD;&#x70B9;
+</li></ol>
+<pre><code class="lang-sh"><span class="hljs-comment"># C&#x51FD;&#x6570;</span>
+(lldb) breakpoint <span class="hljs-built_in">set</span> --name main
+
+<span class="hljs-comment"># C++&#x7C7B;&#x65B9;&#x6CD5;</span>
+(lldb) breakpoint <span class="hljs-built_in">set</span> --method foo
+
+<span class="hljs-comment"># Objective-C&#x9009;&#x62E9;&#x5668;</span>
+breakpoint <span class="hljs-built_in">set</span> --selector alignLeftEdges:</code></pre>
+<ol><li>&#x6839;&#x636E;&#x67D0;&#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8BED;&#x53E5;&#x4E0B;&#x65AD;&#x70B9;(Objective-C&#x6BD4;&#x8F83;&#x6709;&#x7528;)
+</li></ol>
+<pre><code class="lang-sh"><span class="hljs-comment"># lldb&#x6709;&#x4E00;&#x4E2A;&#x6700;&#x5C0F;&#x5B50;&#x4E32;&#x5339;&#x914D;&#x7B97;&#x6CD5;&#xFF0C;&#x4F1A;&#x77E5;&#x9053;&#x5E94;&#x8BE5;&#x5728;&#x54EA;&#x4E2A;&#x51FD;&#x6570;&#x90A3;&#x91CC;&#x4E0B;&#x65AD;&#x70B9;</span>
+breakpoint <span class="hljs-built_in">set</span> -n <span class="hljs-string">&quot;-[SKTGraphicView alignLeftEdges:]&quot;</span></code></pre>
+<ol><li>&#x7ED9;&#x65AD;&#x70B9;&#x8BBE;&#x7F6E;&#x522B;&#x540D;
+</li></ol>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x8FD9;&#x6761;&#x547D;&#x4EE4;</span>
+(lldb) breakpoint <span class="hljs-built_in">set</span> --file DebugDemo.c --line 10
+
+<span class="hljs-comment"># &#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x5199;&#x8FD9;&#x6837;&#x7684;&#x522B;&#x540D;</span>
+(lldb) <span class="hljs-built_in">command</span> <span class="hljs-built_in">alias</span> bfl breakpoint <span class="hljs-built_in">set</span> <span class="hljs-_">-f</span> %1 <span class="hljs-_">-l</span> %2
+
+<span class="hljs-comment"># &#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x50CF;&#x8FD9;&#x6837;&#x5C31;&#x597D;&#x4E86;</span>
+(lldb) bfl DebugDemo.c 10</code></pre>
+<ol><li>&#x67E5;&#x770B;&#x65AD;&#x70B9;&#x5217;&#x8868;&#x3001;&#x542F;&#x7528;/&#x7981;&#x7528;&#x65AD;&#x70B9;&#x3001;&#x5220;&#x9664;&#x65AD;&#x70B9;
+</li></ol>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x67E5;&#x770B;&#x65AD;&#x70B9;&#x5217;&#x8868;</span>
+(lldb) breakpoint list
+
+Current breakpoints:
+1: file = <span class="hljs-string">&apos;DebugDemo.c&apos;</span>, line = 10, locations = 1
+1.1: <span class="hljs-built_in">where</span> = DebugDemo.run`main + 92 at DebugDemo.c:10, address = DebugDemo.run[0x0000000100000a7c], unresolved, hit count = 0
+2: name = <span class="hljs-string">&apos;main&apos;</span>, locations = 1
+2.1: <span class="hljs-built_in">where</span> = DebugDemo.run`main + 68 at DebugDemo.c:8, address = DebugDemo.run[0x0000000100000a64], unresolved, hit count = 0
+
+<span class="hljs-comment"># &#x7981;&#x7528;&#x65AD;&#x70B9;</span>
+<span class="hljs-comment"># &#x6839;&#x636E;&#x4E0A;&#x9762;&#x67E5;&#x770B;&#x65AD;&#x70B9;&#x5217;&#x8868;&#x7684;&#x65F6;&#x5019;&#x7684;&#x5E8F;&#x53F7;&#x6765;&#x64CD;&#x4F5C;&#x65AD;&#x70B9;</span>
+(lldb) breakpoint <span class="hljs-built_in">disable</span> 2
+1 breakpoints disabled.
+(lldb) breakpoint list
+Current breakpoints:
+1: file = <span class="hljs-string">&apos;DebugDemo.c&apos;</span>, line = 10, locations = 1
+1.1: <span class="hljs-built_in">where</span> = DebugDemo.run`main + 92 at DebugDemo.c:10, address = DebugDemo.run[0x0000000100000a7c], unresolved, hit count = 0
+2: name = <span class="hljs-string">&apos;main&apos;</span>, locations = 1 Options: disabled 
+2.1: <span class="hljs-built_in">where</span> = DebugDemo.run`main + 68 at DebugDemo.c:8, address = DebugDemo.run[0x0000000100000a64], unresolved, hit count = 0
+
+<span class="hljs-comment"># &#x542F;&#x7528;&#x65AD;&#x70B9;</span>
+(lldb) breakpoint <span class="hljs-built_in">enable</span> 2
+1 breakpoints enabled.
+(lldb) breakpoint list
+Current breakpoints:
+1: file = <span class="hljs-string">&apos;DebugDemo.c&apos;</span>, line = 10, locations = 1
+1.1: <span class="hljs-built_in">where</span> = DebugDemo.run`main + 92 at DebugDemo.c:10, address = DebugDemo.run[0x0000000100000a7c], unresolved, hit count = 0
+2: name = <span class="hljs-string">&apos;main&apos;</span>, locations = 1
+2.1: <span class="hljs-built_in">where</span> = DebugDemo.run`main + 68 at DebugDemo.c:8, address = DebugDemo.run[0x0000000100000a64], unresolved, hit count = 0
+
+<span class="hljs-comment"># &#x5220;&#x9664;&#x65AD;&#x70B9;</span>
+(lldb) breakpoint delete 1
+1 breakpoints deleted; 0 breakpoint locations disabled.
+(lldb) breakpoint list
+Current breakpoints:
+2: name = <span class="hljs-string">&apos;main&apos;</span>, locations = 1
+2.1: <span class="hljs-built_in">where</span> = DebugDemo.run`main + 68 at DebugDemo.c:8, address = DebugDemo.run[0x0000000100000a64], unresolved, hit count = 0</code></pre>
+<h2 id="&#x542F;&#x52A8;&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;">&#x542F;&#x52A8;&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;</h2><ol><li>&#x542F;&#x52A8;
+&#x8BBE;&#x7F6E;&#x597D;&#x65AD;&#x70B9;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;&#x4E86;&#xFF0C;&#x542F;&#x52A8;&#x7A0B;&#x5E8F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x76F4;&#x63A5;&#x4E00;&#x6761;<code>run</code>&#x547D;&#x4EE4;&#x65E2;&#x53EF;&#x3002;
+</li></ol>
+<pre><code class="lang-sh"><span class="hljs-comment"># run&#x547D;&#x4EE4;&#x5C31;&#x662F;&#x542F;&#x52A8;&#x7A0B;&#x5E8F;</span>
+(lldb) run
+Process 11500 launched: <span class="hljs-string">&apos;/Users/casa/Playground/algorithm/leetcode/DebugDemo/DebugDemo.run&apos;</span> (x86_64)
+Process 11500 stopped   <span class="hljs-comment"># &#x8FD9;&#x91CC;&#x6267;&#x884C;&#x5230;&#x65AD;&#x70B9;&#x4E86;</span>
+* thread <span class="hljs-comment">#1: tid = 0x1af357, 0x0000000100000a64 DebugDemo.run`main + 68 at DebugDemo.c:8, queue = &apos;com.apple.main-thread&apos;, stop reason = breakpoint 2.1</span>
+    frame <span class="hljs-comment">#0: 0x0000000100000a64 DebugDemo.run`main + 68 at DebugDemo.c:8</span>
+   5    void yell(void);
+   6    
+   7    int <span class="hljs-function"><span class="hljs-title">main</span></span> () {
+-&gt; 8        size_t result_array[2] = {0, 0};  <span class="hljs-comment"># &#x8FD9;&#x4E00;&#x884C;&#x524D;&#x9762;&#x7684;&#x7BAD;&#x5934;&#x8868;&#x793A;&#x8C03;&#x8BD5;&#x5668;&#x5728;&#x8FD9;&#x91CC;&#x505C;&#x4F4F;&#x4E86;</span>
+   9    
+   10       FILE *file_handler = fopen(<span class="hljs-string">&quot;TestData&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>);
+   11       json_error_t error;
+        }
+}}}
+2. &#x4E0B;&#x4E00;&#x6B65;&#x3001;&#x6B65;&#x5165;&#x3001;&#x6B65;&#x51FA;&#x3001;&#x7EE7;&#x7EED;&#x6267;&#x884C;
+{{{sh
+<span class="hljs-comment"># &#x4E0B;&#x4E00;&#x6B65; (next &#x6216; n)</span>
+(lldb) next
+Process 11500 stopped
+* thread <span class="hljs-comment">#1: tid = 0x1af357, 0x0000000100000a7c DebugDemo.run`main + 92 at DebugDemo.c:10, queue = &apos;com.apple.main-thread&apos;, stop reason = step over</span>
+    frame <span class="hljs-comment">#0: 0x0000000100000a7c DebugDemo.run`main + 92 at DebugDemo.c:10</span>
+   7    int <span class="hljs-function"><span class="hljs-title">main</span></span> () {
+   8        size_t result_array[2] = {0, 0};
+   9    
+-&gt; 10       FILE *file_handler = fopen(<span class="hljs-string">&quot;TestData&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>);
+   11       json_error_t error;
+   12   
+   13       json_t *root = json_loadf(file_handler, JSON_DECODE_ANY, &amp;error);
+
+<span class="hljs-comment">#---------------------------------------------------------------------------</span>
+
+<span class="hljs-comment"># &#x6B65;&#x5165;(step &#x6216; s)</span>
+Process 11668 stopped
+* thread <span class="hljs-comment">#1: tid = 0x1b4e9d, 0x0000000100000c06 DebugDemo.run`main + 486 at DebugDemo.c:29, queue = &apos;com.apple.main-thread&apos;, stop reason = breakpoint 3.1</span>
+    frame <span class="hljs-comment">#0: 0x0000000100000c06 DebugDemo.run`main + 486 at DebugDemo.c:29</span>
+   26               <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;input array is %&quot;</span>JSON_INTEGER_FORMAT<span class="hljs-string">&quot;\n&quot;</span>, json_<span class="hljs-built_in">integer</span>_value(item));
+   27           
+                }
+   28   
+-&gt; 29           yell();
+   30   
+   31           json_array_foreach(input_array, index, item) {
+   32
+
+(lldb) step
+Process 11668 stopped
+* thread <span class="hljs-comment">#1: tid = 0x1b4e9d, 0x0000000100000e1f DebugDemo.run`yell + 15 at DebugDemo.c:57, queue = &apos;com.apple.main-thread&apos;, stop reason = step in</span>
+    frame <span class="hljs-comment">#0: 0x0000000100000e1f DebugDemo.run`yell + 15 at DebugDemo.c:57</span>
+   54   
+   55   void yell()
+   56   {
+-&gt; 57       <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;here i am yelling\n&quot;</span>);
+   58   
+        }
+
+<span class="hljs-comment">#---------------------------------------------------------------------------</span>
+
+<span class="hljs-comment"># &#x6B65;&#x51FA;(finish)</span>
+(lldb) finish
+here i am yelling
+Process 11668 stopped
+* thread <span class="hljs-comment">#1: tid = 0x1b4e9d, 0x0000000100000c0b DebugDemo.run`main + 491 at DebugDemo.c:31, queue = &apos;com.apple.main-thread&apos;, stop reason = step out</span>
+    frame <span class="hljs-comment">#0: 0x0000000100000c0b DebugDemo.run`main + 491 at DebugDemo.c:31</span>
+   28   
+   29           yell();
+   30   
+-&gt; 31           json_array_foreach(input_array, index, item) {
+   32   
+   33               result_array[0] = index;
+   34               json_int_t value = json_<span class="hljs-built_in">integer</span>_value(item);
+
+<span class="hljs-comment">#---------------------------------------------------------------------------</span>
+
+<span class="hljs-comment"># &#x7EE7;&#x7EED;&#x6267;&#x884C;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x65AD;&#x70B9;&#x505C;, &#x540E;&#x9762;&#x6CA1;&#x6709;&#x65AD;&#x70B9;&#x7684;&#x8BDD;&#x5C31;&#x8DD1;&#x5B8C;&#x4E86;&#xFF08;continue &#x6216; c&#xFF09;</span>
+(lldb) <span class="hljs-built_in">continue</span>
+Process 11668 resuming
+result is 2, 3
+Process 11668 exited with status = 0 (0x00000000)
+
+<span class="hljs-comment">#---------------------------------------------------------------------------</span>
+                                                                                                                                             }
+                }</code></pre>
+<ol><li>&#x67E5;&#x770B;&#x53D8;&#x91CF;&#x3001;&#x8DF3;&#x5E27;&#x67E5;&#x770B;&#x53D8;&#x91CF;
+</li></ol>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x4F7F;&#x7528;po&#x6216;p&#xFF0C;po&#x4E00;&#x822C;&#x7528;&#x6765;&#x8F93;&#x51FA;&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x90A3;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;p&#x4E00;&#x822C;&#x7528;&#x6765;&#x8F93;&#x51FA;&#x57FA;&#x7840;&#x53D8;&#x91CF;&#x3002;&#x666E;&#x901A;&#x6570;&#x7EC4;&#x4E24;&#x8005;&#x90FD;&#x53EF;&#x7528;</span>
+Process 11717 stopped
+* thread <span class="hljs-comment">#1: tid = 0x1b7afc, 0x0000000100000a7c DebugDemo.run`main + 92 at DebugDemo.c:10, queue = &apos;com.apple.main-thread&apos;, stop reason = step over</span>
+    frame <span class="hljs-comment">#0: 0x0000000100000a7c DebugDemo.run`main + 92 at DebugDemo.c:10</span>
+   7    int <span class="hljs-function"><span class="hljs-title">main</span></span> () {
+   8        size_t result_array[2] = {0, 0};
+   9    
+-&gt; 10       FILE *file_handler = fopen(<span class="hljs-string">&quot;TestData&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>);
+   11       json_error_t error;
+   12   
+   13       json_t *root = json_loadf(file_handler, JSON_DECODE_ANY, &amp;error);
+
+(lldb) po result_array
+([0] = 0, [1] = 0)
+
+(lldb) p result_array
+(size_t [2]) <span class="hljs-variable">$2</span> = ([0] = 0, [1] = 0)
+
+<span class="hljs-comment">#---------------------------------------------------------------------------</span>
+
+<span class="hljs-comment"># &#x67E5;&#x770B;&#x6240;&#x6709;&#x5E27;(bt)</span>
+(lldb) bt
+* thread <span class="hljs-comment">#1: tid = 0x1bb7dc, 0x0000000100000e1f DebugDemo.run`yell + 15 at DebugDemo.c:57, queue = &apos;com.apple.main-thread&apos;, stop reason = step in</span>
+  * frame <span class="hljs-comment">#0: 0x0000000100000e1f DebugDemo.run`yell + 15 at DebugDemo.c:57</span>
+    frame <span class="hljs-comment">#1: 0x0000000100000c0b DebugDemo.run`main + 491 at DebugDemo.c:29</span>
+    frame <span class="hljs-comment">#2: 0x00007fff99d175c9 libdyld.dylib`start + 1</span>
+
+<span class="hljs-comment">#---------------------------------------------------------------------------</span>
+
+<span class="hljs-comment"># &#x8DF3;&#x5E27;&#xFF08;frame select&#xFF09;</span>
+(lldb) frame select 1
+frame <span class="hljs-comment">#1: 0x0000000100000c0b DebugDemo.run`main + 491 at DebugDemo.c:29</span>
+   26               <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;input array is %&quot;</span>JSON_INTEGER_FORMAT<span class="hljs-string">&quot;\n&quot;</span>, json_<span class="hljs-built_in">integer</span>_value(item));
+   27           }
+   28   
+-&gt; 29           yell();
+   30   
+   31           json_array_foreach(input_array, index, item) {
+   32
+
+<span class="hljs-comment">#---------------------------------------------------------------------------</span>
+
+<span class="hljs-comment"># &#x67E5;&#x770B;&#x5F53;&#x524D;&#x5E27;&#x4E2D;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF08;frame variable&#xFF09;</span>
+(lldb) frame variable
+
+(size_t [2]) result_array = ([0] = 0, [1] = 0)
+(FILE *) file_handler = 0x00007fff7cfdd070
+(json_error_t) error = (line = 0, column = 0, position = 0, <span class="hljs-built_in">source</span> = <span class="hljs-string">&quot;&quot;</span>, text = <span class="hljs-string">&quot;?)
+(json_t *) root = 0x0000000000000000
+
+#--------------------------------------------------------------------------</span></code></pre>
+<p>&#x4EE5;&#x4E0A;&#x5C31;&#x662F;<code>lldb</code>&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;&#xFF0C;&#x8BE6;&#x7EC6;&#x6587;&#x6863;&#x53EF;&#x4EE5;&#x770B;&#x4E0B;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF1A;<a href="http://lldb.llvm.org/tutorial.html" target="_blank">http://lldb.llvm.org/tutorial.html</a></p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: C\C++">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="探讨闭包.html" class="navigation navigation-next " aria-label="Next page: 探讨闭包">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"在CLI环境下使用LLDB调试程序","level":"2.2.1","depth":2,"next":{"title":"探讨闭包","level":"2.2.2","depth":2,"path":"CPP/探讨闭包.md","ref":"CPP/探讨闭包.md","articles":[]},"previous":{"title":"C\\C++","level":"2.2","depth":1,"path":"CPP/README.md","ref":"CPP/README.md","articles":[{"title":"在CLI环境下使用LLDB调试程序","level":"2.2.1","depth":2,"path":"CPP/在CLI环境下使用LLDB调试程序.md","ref":"CPP/在CLI环境下使用LLDB调试程序.md","articles":[]},{"title":"探讨闭包","level":"2.2.2","depth":2,"path":"CPP/探讨闭包.md","ref":"CPP/探讨闭包.md","articles":[]},{"title":"Boost学习笔记","level":"2.2.3","depth":2,"path":"CPP/Boost学习笔记.md","ref":"CPP/Boost学习笔记.md","articles":[]},{"title":"C语言宏定义入门","level":"2.2.4","depth":2,"path":"CPP/C宏定义入门.md","ref":"CPP/C宏定义入门.md","articles":[]},{"title":"C语言标准库","level":"2.2.5","depth":2,"path":"CPP/C语言标准库.md","ref":"CPP/C语言标准库.md","articles":[]},{"title":"C++异常处理详情","level":"2.2.6","depth":2,"path":"CPP/C++异常处理.md","ref":"CPP/C++异常处理.md","articles":[]},{"title":"C++ Standard Library深入解析","level":"2.2.7","depth":2,"path":"CPP/C++ Standard Library深入解析.md","ref":"CPP/C++ Standard Library深入解析.md","articles":[]},{"title":"Cmake实战","level":"2.2.8","depth":2,"path":"CPP/Cmake实战.md","ref":"CPP/Cmake实战.md","articles":[]},{"title":"Effective C++","level":"2.2.9","depth":2,"path":"CPP/Effective C++.md","ref":"CPP/Effective C++.md","articles":[]},{"title":"Effective C","level":"2.2.10","depth":2,"path":"CPP/Effective C.md","ref":"CPP/Effective C.md","articles":[]},{"title":"Pthread实战","level":"2.2.11","depth":2,"path":"CPP/Pthread实战.md","ref":"CPP/Pthread实战.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CPP/在CLI环境下使用LLDB调试程序.md","mtime":"2016-09-27T14:41:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-27T16:25:12.341Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

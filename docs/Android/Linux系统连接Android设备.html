@@ -1,0 +1,825 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Linux系统连接Android设备 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Xposed FrameWork初探.html" />
+    
+    
+    <link rel="prev" href="Android列表控件使用心得.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="搭建Android开发环境.html">
+            
+                <a href="搭建Android开发环境.html">
+            
+                    
+                    搭建Android开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Android发送短信.html">
+            
+                <a href="Android发送短信.html">
+            
+                    
+                    Android发送短信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="Android判断手机号码分属.html">
+            
+                <a href="Android判断手机号码分属.html">
+            
+                    
+                    Android判断手机号码分属
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="Android列表控件使用心得.html">
+            
+                <a href="Android列表控件使用心得.html">
+            
+                    
+                    Android列表控件使用心得
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.5" data-path="Linux系统连接Android设备.html">
+            
+                <a href="Linux系统连接Android设备.html">
+            
+                    
+                    Linux系统连接Android设备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="Xposed FrameWork初探.html">
+            
+                <a href="Xposed FrameWork初探.html">
+            
+                    
+                    Xposed FrameWork初探
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../CPP/">
+            
+                <a href="../CPP/">
+            
+                    
+                    C\C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../CPP/在CLI环境下使用LLDB调试程序.html">
+            
+                <a href="../CPP/在CLI环境下使用LLDB调试程序.html">
+            
+                    
+                    在CLI环境下使用LLDB调试程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../CPP/探讨闭包.html">
+            
+                <a href="../CPP/探讨闭包.html">
+            
+                    
+                    探讨闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../CPP/Boost学习笔记.html">
+            
+                <a href="../CPP/Boost学习笔记.html">
+            
+                    
+                    Boost学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../CPP/C宏定义入门.html">
+            
+                <a href="../CPP/C宏定义入门.html">
+            
+                    
+                    C语言宏定义入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../CPP/C语言标准库.html">
+            
+                <a href="../CPP/C语言标准库.html">
+            
+                    
+                    C语言标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../CPP/C++异常处理.html">
+            
+                <a href="../CPP/C++异常处理.html">
+            
+                    
+                    C++异常处理详情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../CPP/C++ Standard Library深入解析.html">
+            
+                <a href="../CPP/C++ Standard Library深入解析.html">
+            
+                    
+                    C++ Standard Library深入解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../CPP/Cmake实战.html">
+            
+                <a href="../CPP/Cmake实战.html">
+            
+                    
+                    Cmake实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../CPP/Effective C++.html">
+            
+                <a href="../CPP/Effective C++.html">
+            
+                    
+                    Effective C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="../CPP/Effective C.html">
+            
+                <a href="../CPP/Effective C.html">
+            
+                    
+                    Effective C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.11" data-path="../CPP/Pthread实战.html">
+            
+                <a href="../CPP/Pthread实战.html">
+            
+                    
+                    Pthread实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../Emacs/">
+            
+                <a href="../Emacs/">
+            
+                    
+                    Emacs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../Emacs/Org-Mode简明手册.html">
+            
+                <a href="../Emacs/Org-Mode简明手册.html">
+            
+                    
+                    Org-Mode简明手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../Git/Git使用心得.html">
+            
+                <a href="../Git/Git使用心得.html">
+            
+                    
+                    Git使用心得
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../Java/">
+            
+                <a href="../Java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../Java/单例模式.html">
+            
+                <a href="../Java/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../Java/远程调试Java程序.html">
+            
+                <a href="../Java/远程调试Java程序.html">
+            
+                    
+                    远程调试Java程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../Linux/">
+            
+                <a href="../Linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../Linux/使用SSL证书登陆Linux服务器.html">
+            
+                <a href="../Linux/使用SSL证书登陆Linux服务器.html">
+            
+                    
+                    使用SSL证书登陆Linux服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../Linux/调换CapsLk键和Ctrl键.html">
+            
+                <a href="../Linux/调换CapsLk键和Ctrl键.html">
+            
+                    
+                    调换CapsLk键和Ctrl键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../Linux/Alpine Linux使用笔记.html">
+            
+                <a href="../Linux/Alpine Linux使用笔记.html">
+            
+                    
+                    Alpine Linux使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../Linux/Arch Linux使用笔记.html">
+            
+                <a href="../Linux/Arch Linux使用笔记.html">
+            
+                    
+                    Arch Linux使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../Linux/Docker学习笔记.html">
+            
+                <a href="../Linux/Docker学习笔记.html">
+            
+                    
+                    Docker使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../Linux/Vagrant简易教程.html">
+            
+                <a href="../Linux/Vagrant简易教程.html">
+            
+                    
+                    Vagrant简易教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../Linux/Vim使用心得.html">
+            
+                <a href="../Linux/Vim使用心得.html">
+            
+                    
+                    Vim使用心得
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../Web/">
+            
+                <a href="../Web/">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../Web/定制Ghost博客.html">
+            
+                <a href="../Web/定制Ghost博客.html">
+            
+                    
+                    定制Ghost博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Linux系统连接Android设备</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="linux&#x7CFB;&#x7EDF;&#x8FDE;&#x63A5;android&#x8BBE;&#x5907;">Linux&#x7CFB;&#x7EDF;&#x8FDE;&#x63A5;Android&#x8BBE;&#x5907;</h1><p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x4F7F;&#x7528;Ubuntu&#x3001;Arch&#x8FD9;&#x4E9B;&#x53D1;&#x884C;&#x7248;&#xFF0C;&#x90FD;&#x4F1A;&#x9ED8;&#x8BA4;&#x5BF9;Android&#x8BBE;&#x5907;&#x6709;&#x826F;&#x597D;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x4F46;&#x5176;&#x5B9E;&#x652F;&#x6301;&#x7684;&#x529B;&#x5EA6;&#x4E0D;&#x662F;&#x592A;&#x597D;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x4F60;&#x60F3;&#x7528;<code>adb sideload</code>&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;&#x7CFB;&#x7EDF;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x8981;&#x5B9E;&#x73B0;&#x5BF9;Android&#x7684;&#x5168;&#x9762;&#x652F;&#x6301;&#x8FD8;&#x662F;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x82B1;&#x70B9;&#x529F;&#x592B;&#x6539;&#x4E0B;Linux&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x624D;&#x884C;&#x3002;</p><h2 id="udev">UDEV</h2><p>&#x4E00;&#x822C;&#x7684;Linux&#x53D1;&#x884C;&#x7248;&#x90FD;&#x662F;&#x7528;UDEV&#x6765;&#x7BA1;&#x7406;USB&#x8BBE;&#x5907;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x73B0;&#x5728;&#x4F7F;&#x7528;&#x7684;Ubuntu&#x3002;&#x56E0;&#x6B64;&#x53EA;&#x8981;&#x5BF9;udev&#x914D;&#x7F6E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x5177;&#x4F53;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p><ol><li>&#x786E;&#x8BA4;&#x7CFB;&#x7EDF;&#x767B;&#x9646;&#x8D26;&#x53F7;&#x5C5E;&#x4E8E;<code>plugdev</code>&#x7528;&#x6237;&#x7EC4;&#xFF0C;&#x4E0D;&#x6E05;&#x695A;&#x7684;&#x8BDD;&#x952E;&#x5165;
+<code>groups</code>
+&#x4ECE;&#x5217;&#x8868;&#x4E0A;&#x67E5;&#x770B;&#x7528;&#x6237;&#x7EC4;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x770B;&#x5230;<code>plugdev</code>&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x5C31;&#x8981;&#x52A0;&#x5165;&#x8BE5;&#x7EC4;&#x4E86;&#xFF1A;
+<code>sudo gpasswd -a &lt;username&gt; plugdev  # &#x5176;&#x4E2D;username&#x4E3A;&#x4F60;&#x7684;&#x7528;&#x6237;&#x540D;</code>
+</li>
+<li>&#x521B;&#x5EFA;<code>/etc/udev/rules.d/51-android.rules</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+</li>
+<li>&#x5728;<code>/etc/udev/rules.d/51-android.rules</code>&#x5199;&#x5165;Android&#x8BBE;&#x5907;&#x76F8;&#x5173;&#x914D;&#x7F6E;
+</li></ol>
+<h2 id="udev&#x53C2;&#x8003;&#x914D;&#x7F6E;">UDEV&#x53C2;&#x8003;&#x914D;&#x7F6E;</h2><p>Google&#x5B98;&#x65B9;&#x7684;&#x914D;&#x7F6E;&#x53EA;&#x6709;&#x5B83;&#x51FA;&#x7684;Nexus&#x7CFB;&#x5217;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x8FD9;&#x91CC;&#x53C2;&#x8003;&#x4E86;<a href="https://wiki.cyanogenmod.org/w/UDEV" target="_blank">Cyanogenmod</a>&#x7684;&#xFF1A;</p><pre><code class="lang-sh"><span class="hljs-comment">#Acer</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0502&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#ASUS</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0b05&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Dell</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;413c&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Foxconn</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0489&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Fujitsu &amp; Fujitsu Toshiba</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;04c5&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Garmin-Asus</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;091e&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Google</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;18d1&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Haier</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;201e&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Hisense</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;109b&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#HTC</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0bb4&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Huawei</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;12d1&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#K-Touch</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;24e3&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#KT Tech</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;2116&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Kyocera</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0482&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Lenovo</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;17ef&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#LG</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;1004&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Motorola</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;22b8&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#MTK</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0e8d&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#NEC</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0409&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Nook</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;2080&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Nvidia</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0955&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#OTGV</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;2257&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Pantech</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;10a9&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Pegatron</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;1d4d&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Philips</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0471&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#PMC-Sierra</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;04da&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Qualcomm</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;05c6&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#SK Telesys</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;1f53&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Samsung</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;04e8&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Sharp</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;04dd&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Sony</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;054c&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Sony Ericsson</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0fce&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Teleepoch</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;2340&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#Toshiba</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;0930&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span>
+<span class="hljs-comment">#ZTE</span>
+SUBSYSTEM==<span class="hljs-string">&quot;usb&quot;</span>, ATTR{idVendor}==<span class="hljs-string">&quot;19d2&quot;</span>, MODE=<span class="hljs-string">&quot;0664&quot;</span>, GROUP=<span class="hljs-string">&quot;plugdev&quot;</span></code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Android列表控件使用心得.html" class="navigation navigation-prev " aria-label="Previous page: Android列表控件使用心得">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Xposed FrameWork初探.html" class="navigation navigation-next " aria-label="Next page: Xposed FrameWork初探">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Linux系统连接Android设备","level":"2.1.5","depth":2,"next":{"title":"Xposed FrameWork初探","level":"2.1.6","depth":2,"path":"Android/Xposed FrameWork初探.md","ref":"Android/Xposed FrameWork初探.md","articles":[]},"previous":{"title":"Android列表控件使用心得","level":"2.1.4","depth":2,"path":"Android/Android列表控件使用心得.md","ref":"Android/Android列表控件使用心得.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Android/Linux系统连接Android设备.md","mtime":"2016-09-27T15:31:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-27T16:25:12.341Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,758 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>搭建Android开发环境 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Android发送短信.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1.1" data-path="搭建Android开发环境.html">
+            
+                <a href="搭建Android开发环境.html">
+            
+                    
+                    搭建Android开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Android发送短信.html">
+            
+                <a href="Android发送短信.html">
+            
+                    
+                    Android发送短信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="Android判断手机号码分属.html">
+            
+                <a href="Android判断手机号码分属.html">
+            
+                    
+                    Android判断手机号码分属
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="Android列表控件使用心得.html">
+            
+                <a href="Android列表控件使用心得.html">
+            
+                    
+                    Android列表控件使用心得
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="Linux系统连接Android设备.html">
+            
+                <a href="Linux系统连接Android设备.html">
+            
+                    
+                    Linux系统连接Android设备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="Xposed FrameWork初探.html">
+            
+                <a href="Xposed FrameWork初探.html">
+            
+                    
+                    Xposed FrameWork初探
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../CPP/">
+            
+                <a href="../CPP/">
+            
+                    
+                    C\C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../CPP/在CLI环境下使用LLDB调试程序.html">
+            
+                <a href="../CPP/在CLI环境下使用LLDB调试程序.html">
+            
+                    
+                    在CLI环境下使用LLDB调试程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../CPP/探讨闭包.html">
+            
+                <a href="../CPP/探讨闭包.html">
+            
+                    
+                    探讨闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../CPP/Boost学习笔记.html">
+            
+                <a href="../CPP/Boost学习笔记.html">
+            
+                    
+                    Boost学习笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../CPP/C宏定义入门.html">
+            
+                <a href="../CPP/C宏定义入门.html">
+            
+                    
+                    C语言宏定义入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../CPP/C语言标准库.html">
+            
+                <a href="../CPP/C语言标准库.html">
+            
+                    
+                    C语言标准库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../CPP/C++异常处理.html">
+            
+                <a href="../CPP/C++异常处理.html">
+            
+                    
+                    C++异常处理详情
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../CPP/C++ Standard Library深入解析.html">
+            
+                <a href="../CPP/C++ Standard Library深入解析.html">
+            
+                    
+                    C++ Standard Library深入解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../CPP/Cmake实战.html">
+            
+                <a href="../CPP/Cmake实战.html">
+            
+                    
+                    Cmake实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../CPP/Effective C++.html">
+            
+                <a href="../CPP/Effective C++.html">
+            
+                    
+                    Effective C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="../CPP/Effective C.html">
+            
+                <a href="../CPP/Effective C.html">
+            
+                    
+                    Effective C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.11" data-path="../CPP/Pthread实战.html">
+            
+                <a href="../CPP/Pthread实战.html">
+            
+                    
+                    Pthread实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../Emacs/">
+            
+                <a href="../Emacs/">
+            
+                    
+                    Emacs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../Emacs/Org-Mode简明手册.html">
+            
+                <a href="../Emacs/Org-Mode简明手册.html">
+            
+                    
+                    Org-Mode简明手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Git/">
+            
+                <a href="../Git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../Git/Git使用心得.html">
+            
+                <a href="../Git/Git使用心得.html">
+            
+                    
+                    Git使用心得
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../Java/">
+            
+                <a href="../Java/">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../Java/单例模式.html">
+            
+                <a href="../Java/单例模式.html">
+            
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../Java/远程调试Java程序.html">
+            
+                <a href="../Java/远程调试Java程序.html">
+            
+                    
+                    远程调试Java程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../Linux/">
+            
+                <a href="../Linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../Linux/使用SSL证书登陆Linux服务器.html">
+            
+                <a href="../Linux/使用SSL证书登陆Linux服务器.html">
+            
+                    
+                    使用SSL证书登陆Linux服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../Linux/调换CapsLk键和Ctrl键.html">
+            
+                <a href="../Linux/调换CapsLk键和Ctrl键.html">
+            
+                    
+                    调换CapsLk键和Ctrl键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../Linux/Alpine Linux使用笔记.html">
+            
+                <a href="../Linux/Alpine Linux使用笔记.html">
+            
+                    
+                    Alpine Linux使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../Linux/Arch Linux使用笔记.html">
+            
+                <a href="../Linux/Arch Linux使用笔记.html">
+            
+                    
+                    Arch Linux使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../Linux/Docker学习笔记.html">
+            
+                <a href="../Linux/Docker学习笔记.html">
+            
+                    
+                    Docker使用笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../Linux/Vagrant简易教程.html">
+            
+                <a href="../Linux/Vagrant简易教程.html">
+            
+                    
+                    Vagrant简易教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../Linux/Vim使用心得.html">
+            
+                <a href="../Linux/Vim使用心得.html">
+            
+                    
+                    Vim使用心得
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../Web/">
+            
+                <a href="../Web/">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../Web/定制Ghost博客.html">
+            
+                <a href="../Web/定制Ghost博客.html">
+            
+                    
+                    定制Ghost博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >搭建Android开发环境</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x642D;&#x5EFA;android&#x5F00;&#x53D1;&#x73AF;&#x5883;">&#x642D;&#x5EFA;Android&#x5F00;&#x53D1;&#x73AF;&#x5883;</h1><h2 id="android-sdk&#x548C;android-ndk&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;">Android SDK&#x548C;Android NDK&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h2><p>&#x5B89;&#x88C5;&#x597D;SDK&#x548C;NDK&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x7CFB;&#x7EDF;&#x53D8;&#x91CF;PATH:</p><pre><code class="lang-sh"><span class="hljs-built_in">export</span> ANDROID_HOME=/opt/android-sdk
+<span class="hljs-built_in">export</span> ANDROID_NDK=/opt/android-ndk
+PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$ANDROID_HOME</span>/tools:<span class="hljs-variable">$ANDROID_HOME</span>/platform-tools:<span class="hljs-variable">$ANDROID_NDK</span></code></pre>
+<h2 id="adb&#x673A;&#x578B;&#x9002;&#x914D;">ADB&#x673A;&#x578B;&#x9002;&#x914D;</h2><p>Linux\Mac&#x51E0;&#x4E4E;&#x539F;&#x751F;&#x914D;&#x6709;Android&#x8BBE;&#x5907;&#x7684;&#x9A71;&#x52A8;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;Android&#x624B;&#x673A;&#x90FD;&#x662F;&#x5373;&#x63D2;&#x5373;&#x7528;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x4E9B;&#x673A;&#x578B;&#x8FD8;&#x662F;&#x6CA1;&#x6CD5;&#x81EA;&#x52A8;&#x8BC6;&#x522B;&#xFF0C;&#x6BD4;&#x5982;&#x795E;&#x65CF;&#xFF08;&#x9B45;&#x65CF;&#xFF09;&#x7684;&#x624B;&#x673A;&#x7B49;&#x7B49;&#x3002;&#x4E0D;&#x8FC7;&#x6709;&#x4E9B;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x597D;&#x89E3;&#x51B3;&#x7684;&#x3002;</p><h3 id="&#x9B45;&#x65CF;mx4">&#x9B45;&#x65CF;MX4</h3><p>&#x89E3;&#x51B3;MX4&#x4E0D;&#x80FD;&#x8BC6;&#x522B;&#x7684;&#x95EE;&#x9898;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x5728;<code>~/.android/adb_usb.ini</code>&#xFF08;&#x6CA1;&#x6709;&#x8BE5;&#x6587;&#x4EF6;&#x5C31;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;)&#x5199;&#x4E0A;MX4&#x7F16;&#x53F7;&#x4EE3;&#x7801;&#x5373;&#x53EF;&#x3002;</p><pre><code class="lang-sh">0x2a45</code></pre>
+<h2 id="adb&#x65E0;&#x7EBF;&#x8C03;&#x8BD5;">ADB&#x65E0;&#x7EBF;&#x8C03;&#x8BD5;</h2><p>&#x6709;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5FD8;&#x8BB0;&#x5E26;USB&#x7EBF;&#x6216;&#x8005;&#x6015;&#x624B;&#x673A;&#x8FC7;&#x5145;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x542F;&#x7528;&#x624B;&#x673A;&#x7684;&#x65E0;&#x7EBF;&#x8C03;&#x8BD5;&#x6A21;&#x5F0F;&#xFF1A;</p><pre><code class="lang-sh"><span class="hljs-comment"># &#x624B;&#x673A;&#x7AEF;</span>
+su
+stop adbd
+setprop service.adb.tcp.port 5555
+start adbd
+
+<span class="hljs-comment"># &#x7535;&#x8111;&#x7AEF;</span>
+adb connect &lt;&#x624B;&#x673A;ip&#x5730;&#x5740;(&#x7AEF;&#x53E3;&#x9ED8;&#x8BA4;&#x662F;5555)&gt;</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Android">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Android发送短信.html" class="navigation navigation-next " aria-label="Next page: Android发送短信">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"搭建Android开发环境","level":"2.1.1","depth":2,"next":{"title":"Android发送短信","level":"2.1.2","depth":2,"path":"Android/Android发送短信.md","ref":"Android/Android发送短信.md","articles":[]},"previous":{"title":"Android","level":"2.1","depth":1,"path":"Android/README.md","ref":"Android/README.md","articles":[{"title":"搭建Android开发环境","level":"2.1.1","depth":2,"path":"Android/搭建Android开发环境.md","ref":"Android/搭建Android开发环境.md","articles":[]},{"title":"Android发送短信","level":"2.1.2","depth":2,"path":"Android/Android发送短信.md","ref":"Android/Android发送短信.md","articles":[]},{"title":"Android判断手机号码分属","level":"2.1.3","depth":2,"path":"Android/Android判断手机号码分属.md","ref":"Android/Android判断手机号码分属.md","articles":[]},{"title":"Android列表控件使用心得","level":"2.1.4","depth":2,"path":"Android/Android列表控件使用心得.md","ref":"Android/Android列表控件使用心得.md","articles":[]},{"title":"Linux系统连接Android设备","level":"2.1.5","depth":2,"path":"Android/Linux系统连接Android设备.md","ref":"Android/Linux系统连接Android设备.md","articles":[]},{"title":"Xposed FrameWork初探","level":"2.1.6","depth":2,"path":"Android/Xposed FrameWork初探.md","ref":"Android/Xposed FrameWork初探.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Android/搭建Android开发环境.md","mtime":"2016-09-27T14:58:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-27T16:25:12.341Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
