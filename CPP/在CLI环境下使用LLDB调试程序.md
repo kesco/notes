@@ -1,23 +1,30 @@
-在CLI环境下使用LLDB调试程序
+# 在CLI环境下使用LLDB调试程序
 
 我们一般调试程序都是使用IDE来调试，但是有时候我们没法用到IDE，比如在Linux服务器上，或者IDE上压根没有集成这种语言的调试器，这时候我们就需要用到CLI环境上启动调试器来调试啦。最近因为要写C和CPP的代码，而在Mac上用不惯Xcode和Clion(还是习惯用Vim=_+)，所以只能在开个iTerm用`lldb`来调了。
 
-# 开始调试程序
+## 开始调试程序
 
 1. 直接用`lldb`来启动调试的程序
-{{{sh
+
+```sh
 lldb app           # app是编译出来的可执行文件
-}}}
+```
+
 2. 调试带参数的程序
-{{{sh
+
+```sh
 lldb -- app 1 2 3  # 等于./app 1 2 3
-  }}}
+```
+
 3. 调试正在运行的进程
-{{{sh
+
+```sh
 lldb               # 先启动LLDB
-}}}
+```
+
 进入以后，可以使用`lldb`内部命令挂到运行中的进程上去：
-{{{sh
+
+```sh
 # 然后你找一个进程的pid出来，我找的是QQ音乐
 # 你可以ps aux | grep casa （casa是我的用户名） 在这个列表里面挑一个程序的pid
 # 输入process attach --pid 你找到的pid，来把调试器挂到这个进程上去调试
@@ -26,8 +33,9 @@ lldb               # 先启动LLDB
 # 你也可以告诉lldb你要挂在那个进程名下
 (lldb) process attach --name Safari     # 简写命令: attach -n Safari
                                                 或  pro att -n Safari
-}}}
-# 查看代码
+```
+
+## 查看代码
 
 如果构建的程序是在`Debug`模式下构建的，那么就可以使用`lldb`来查看程序的代码。
 
@@ -35,16 +43,19 @@ lldb               # 先启动LLDB
 2. 要看其它文件的代码，只需要`list file`就可以了，之后按`list`的话，会自动从该文件往下看。
 3. 要看某个函数的代码，只需要`list method`既可。
 
-# 下断点
+## 下断点
 
 调试必须要做的就是打断点啦，不然就会眼花花的看着程序跑过去咯。CLI下打断点是要打命令的，这点是比IDE麻烦，不过也麻烦不了哪里去。
 
 1. 根据文件名和行号下断点。
+
 ```sh
 (lldb) breakpoint set --file DebugDemo.c --line 10
 Breakpoint 1: where = DebugDemo.run`main + 92 at DebugDemo.c:10, address = 0x0000000100000a7c
 ```
+
 2. 根据函数名下断点
+
 ```sh
 # C函数
 (lldb) breakpoint set --name main
@@ -55,12 +66,16 @@ Breakpoint 1: where = DebugDemo.run`main + 92 at DebugDemo.c:10, address = 0x000
 # Objective-C选择器
 breakpoint set --selector alignLeftEdges:
 ```
+
 3. 根据某个函数调用语句下断点(Objective-C比较有用)
+
 ```sh
 # lldb有一个最小子串匹配算法，会知道应该在哪个函数那里下断点
 breakpoint set -n "-[SKTGraphicView alignLeftEdges:]"
 ```
+
 4. 给断点设置别名
+
 ```sh
 # 比如下面的这条命令
 (lldb) breakpoint set --file DebugDemo.c --line 10
@@ -71,7 +86,9 @@ breakpoint set -n "-[SKTGraphicView alignLeftEdges:]"
 # 使用的时候就像这样就好了
 (lldb) bfl DebugDemo.c 10
 ```
+
 5. 查看断点列表、启用/禁用断点、删除断点
+
 ```sh
 # 查看断点列表
 (lldb) breakpoint list
@@ -111,11 +128,13 @@ Current breakpoints:
 2: name = 'main', locations = 1
 2.1: where = DebugDemo.run`main + 68 at DebugDemo.c:8, address = DebugDemo.run[0x0000000100000a64], unresolved, hit count = 0
 ```
-# 启动调试程序
+
+## 启动调试程序
 
 1. 启动
 设置好断点我们就可以开始调试程序了，启动程序很简单，直接一条`run`命令既可。
-{{{sh
+
+```sh
 # run命令就是启动程序
 (lldb) run
 Process 11500 launched: '/Users/casa/Playground/algorithm/leetcode/DebugDemo/DebugDemo.run' (x86_64)
@@ -199,9 +218,11 @@ Process 11668 exited with status = 0 (0x00000000)
 #---------------------------------------------------------------------------
                                                                                                                                              }
                 }
-}}}
+```
+
 3. 查看变量、跳帧查看变量
-{{{sh
+
+```sh
 # 使用po或p，po一般用来输出指针指向的那个对象，p一般用来输出基础变量。普通数组两者都可用
 Process 11717 stopped
 * thread #1: tid = 0x1b7afc, 0x0000000100000a7c DebugDemo.run`main + 92 at DebugDemo.c:10, queue = 'com.apple.main-thread', stop reason = step over
@@ -253,5 +274,6 @@ frame #1: 0x0000000100000c0b DebugDemo.run`main + 491 at DebugDemo.c:29
 (json_t *) root = 0x0000000000000000
                                                                                                                                                                                                           
 #--------------------------------------------------------------------------
-}}}
+```
+
 以上就是`lldb`的基本用法，详细文档可以看下官方文档：http://lldb.llvm.org/tutorial.html

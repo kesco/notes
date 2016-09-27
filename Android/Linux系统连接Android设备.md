@@ -1,4 +1,4 @@
-Linux系统连接Android设备
+# Linux系统连接Android设备
 
 一般来说，使用Ubuntu、Arch这些发行版，都会默认对Android设备有良好的支持，但其实支持的力度不是太好的，比如你想用`adb sideload`的时候就会发现系统提示错误。所以，要实现对Android的全面支持还是要我们自己花点功夫改下Linux系统配置才行。
 
@@ -16,6 +16,7 @@ Linux系统连接Android设备
 ## UDEV参考配置
 
 Google官方的配置只有它出的Nexus系列的，所以我这里参考了[Cyanogenmod][0]的：
+
 ```sh
 #Acer
 SUBSYSTEM=="usb", ATTR{idVendor}=="0502", MODE="0664", GROUP="plugdev"
@@ -89,5 +90,5 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0930", MODE="0664", GROUP="plugdev"
 SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", MODE="0664", GROUP="plugdev"
 ```
 
- [0]: https://wiki.cyanogenmod.org/w/UDEV
+[0]: https://wiki.cyanogenmod.org/w/UDEV
 

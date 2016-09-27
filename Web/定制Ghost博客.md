@@ -1,4 +1,4 @@
-定制Ghost博客
+# 定制Ghost博客
 
 ## 升级Ghost
 
