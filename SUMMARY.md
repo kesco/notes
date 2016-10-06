@@ -1,8 +1,6 @@
 # Summary
 
 * [前言](README.md)
-
-<!-- ### 关系类型 -->
 * [Android](Android/README.md)
   * [搭建Android开发环境](Android/搭建Android开发环境.md)
   * [Android发送短信](Android/Android发送短信.md)
@@ -38,4 +36,6 @@
   * [Vagrant简易教程](Linux/Vagrant简易教程.md)
   * [Vim使用心得](Linux/Vim使用心得.md)
 * [Web](Web/README.md)
+  * [ES2015学习笔记](Web/ES2015学习笔记.md)
+  * [React Native学习笔记](Web/React Native学习笔记.md)
   * [定制Ghost博客](Web/定制Ghost博客.md)
