@@ -8,6 +8,8 @@
   * [Android列表控件使用心得](Android/Android列表控件使用心得.md)
   * [Linux系统连接Android设备](Android/Linux系统连接Android设备.md)
   * [Xposed FrameWork初探](Android/Xposed FrameWork初探.md)
+  * [反编译APK](Android/反编译APK.md)
+  * [编译Android源码](Android/编译Android源码.md)
   * [获取系统内安装应用信息的方法](Android/获取系统内安装应用信息的方法.md)
 * [C\C++](CPP/README.md)
   * [在CLI环境下使用LLDB调试程序](CPP/在CLI环境下使用LLDB调试程序.md)
