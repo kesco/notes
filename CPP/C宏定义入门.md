@@ -70,7 +70,7 @@ struct command
 
 在宏扩展的时候：
 
-```
+```c
 struct command commands[] =
 {
     COMMAND (quit),
