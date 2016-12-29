@@ -13,6 +13,7 @@
   * [编译Android源码](Android/编译Android源码.md)
   * [获取系统内安装应用信息的方法](Android/获取系统内安装应用信息的方法.md)
   * [FrameLayout低版本适配填坑](Android/FrameLayout低版本适配填坑.md)
+  * [给Android 14以上系统加上虚拟菜单按键](Android/给Android 14以上系统加上虚拟菜单按键.md)
 * [C\C++](CPP/README.md)
   * [在CLI环境下使用LLDB调试程序](CPP/在CLI环境下使用LLDB调试程序.md)
   * [探讨闭包](CPP/探讨闭包.md)
