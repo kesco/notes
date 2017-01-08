@@ -26,6 +26,8 @@
   * [Effective C++](CPP/Effective C++.md)
   * [Effective C](CPP/Effective C.md)
   * [Pthread实战](CPP/Pthread实战.md)
+  * [如何写Makefile](CPP/如何写Makefile.md)
+  * [GCC入门](CPP/GCC入门.md)
 * [Emacs](Emacs/README.md)
   * [Org-Mode简明手册](Emacs/Org-Mode简明手册.md)
 * [Git](Git/README.md)

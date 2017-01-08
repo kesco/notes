@@ -131,7 +131,7 @@ Current breakpoints:
 
 ## 启动调试程序
 
-1. 启动
+- 启动
 设置好断点我们就可以开始调试程序了，启动程序很简单，直接一条`run`命令既可。
 
 ```sh
@@ -149,9 +149,11 @@ Process 11500 stopped   # 这里执行到断点了
    10       FILE *file_handler = fopen("TestData", "r");
    11       json_error_t error;
         }
-}}}
-2. 下一步、步入、步出、继续执行
-{{{sh
+```
+
+- 下一步、步入、步出、继续执行
+
+```sh
 # 下一步 (next 或 n)
 (lldb) next
 Process 11500 stopped
@@ -220,7 +222,7 @@ Process 11668 exited with status = 0 (0x00000000)
                 }
 ```
 
-3. 查看变量、跳帧查看变量
+- 查看变量、跳帧查看变量
 
 ```sh
 # 使用po或p，po一般用来输出指针指向的那个对象，p一般用来输出基础变量。普通数组两者都可用

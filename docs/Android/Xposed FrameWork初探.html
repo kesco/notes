@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="获取系统内安装应用信息的方法.html" />
+    <link rel="next" href="反编译APK.html" />
     
     
     <link rel="prev" href="Linux系统连接Android设备.html" />
@@ -116,7 +116,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="搭建Android开发环境.html">
+        <li class="chapter " data-level="1.2.1" data-path="使用Buck构建Android工程.html">
+            
+                <a href="使用Buck构建Android工程.html">
+            
+                    
+                    使用Buck构建Android工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="搭建Android开发环境.html">
             
                 <a href="搭建Android开发环境.html">
             
@@ -129,7 +142,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="Android发送短信.html">
+        <li class="chapter " data-level="1.2.3" data-path="Android发送短信.html">
             
                 <a href="Android发送短信.html">
             
@@ -142,7 +155,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="Android判断手机号码分属.html">
+        <li class="chapter " data-level="1.2.4" data-path="Android判断手机号码分属.html">
             
                 <a href="Android判断手机号码分属.html">
             
@@ -155,7 +168,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="Android列表控件使用心得.html">
+        <li class="chapter " data-level="1.2.5" data-path="Android列表控件使用心得.html">
             
                 <a href="Android列表控件使用心得.html">
             
@@ -168,7 +181,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="Linux系统连接Android设备.html">
+        <li class="chapter " data-level="1.2.6" data-path="Linux系统连接Android设备.html">
             
                 <a href="Linux系统连接Android设备.html">
             
@@ -181,7 +194,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.6" data-path="Xposed FrameWork初探.html">
+        <li class="chapter active" data-level="1.2.7" data-path="Xposed FrameWork初探.html">
             
                 <a href="Xposed FrameWork初探.html">
             
@@ -194,12 +207,64 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="获取系统内安装应用信息的方法.html">
+        <li class="chapter " data-level="1.2.8" data-path="反编译APK.html">
+            
+                <a href="反编译APK.html">
+            
+                    
+                    反编译APK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="编译Android源码.html">
+            
+                <a href="编译Android源码.html">
+            
+                    
+                    编译Android源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="获取系统内安装应用信息的方法.html">
             
                 <a href="获取系统内安装应用信息的方法.html">
             
                     
                     获取系统内安装应用信息的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="FrameLayout低版本适配填坑.html">
+            
+                <a href="FrameLayout低版本适配填坑.html">
+            
+                    
+                    FrameLayout低版本适配填坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="给Android 14以上系统加上虚拟菜单按键.html">
+            
+                <a href="给Android 14以上系统加上虚拟菜单按键.html">
+            
+                    
+                    给Android 14以上系统加上虚拟菜单按键
             
                 </a>
             
@@ -362,6 +427,32 @@
             
                     
                     Pthread实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../CPP/如何写Makefile.html">
+            
+                <a href="../CPP/如何写Makefile.html">
+            
+                    
+                    如何写Makefile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../CPP/GCC入门.html">
+            
+                <a href="../CPP/GCC入门.html">
+            
+                    
+                    GCC入门
             
                 </a>
             
@@ -696,7 +787,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="xposed-framework&#x521D;&#x63A2;">Xposed FrameWork&#x521D;&#x63A2;</h1><p>Xposed&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x51FA;&#x540D;&#x7684;Android&#x7CFB;&#x7EDF;&#x6CE8;&#x5165;&#x6846;&#x67B6;&#x3002;&#x4F9D;&#x8D56;&#x4E8E;Xposed&#x6846;&#x67B6;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x4E0D;&#x5728;&#x4FEE;&#x6539;&#x7CFB;&#x7EDF;&#x5C42;&#x9762;&#x7684;&#x6E90;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FDB;&#x884C;&#x5404;&#x79CD;Hook&#x3002;</p><h2 id="gradle&#x4E0A;&#x5F15;&#x5165;xposed-jar&#x5305;">Gradle&#x4E0A;&#x5F15;&#x5165;Xposed JAR&#x5305;</h2><p>&#x73B0;&#x5728;&#xFF0C;Google&#x5DF2;&#x7ECF;&#x7EC8;&#x6B62;Eclipse&#x7684;&#x652F;&#x6301;&#x4E86;&#xFF0C;&#x4EE5;&#x540E;&#x5B98;&#x65B9;&#x53EA;&#x652F;&#x6301;Android Studio&#x6765;&#x5F00;&#x53D1;Android&#x3002;&#x800C;Android Studio&#x6784;&#x5EFA;Android&#x5E94;&#x7528;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;Gradle&#x7684;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5982;&#x679C;&#x7528;Android Stuido&#x5F00;&#x53D1;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E2A;Xposed Module&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x901A;&#x8FC7;Gradle&#x6765;&#x5F15;&#x5165;Xposed&#x6846;&#x67B6;&#x3002;</p><p>&#x76EE;&#x524D;&#xFF0C;Xposed&#x7684;SDK&#x8FD8;&#x662F;&#x4EE5;JAR&#x4E3A;&#x4E3B;&#xFF0C;&#x6CA1;&#x6709;&#x76F8;&#x5E94;&#x7684;Maven&#xFF0C;&#x6240;&#x4EE5;</p><pre><code class="lang-groovy">dependencies {
+                                <h1 id="xposed-framework&#x521D;&#x63A2;">Xposed FrameWork&#x521D;&#x63A2;</h1><p>Xposed&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x51FA;&#x540D;&#x7684;Android&#x7CFB;&#x7EDF;&#x6CE8;&#x5165;&#x6846;&#x67B6;&#x3002;&#x4F9D;&#x8D56;&#x4E8E;Xposed&#x6846;&#x67B6;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x4E0D;&#x5728;&#x4FEE;&#x6539;&#x7CFB;&#x7EDF;&#x5C42;&#x9762;&#x7684;&#x6E90;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FDB;&#x884C;&#x5404;&#x79CD;Hook&#x3002;</p><h2 id="&#x865A;&#x62DF;&#x673A;&#x5B89;&#x88C5;xposed">&#x865A;&#x62DF;&#x673A;&#x5B89;&#x88C5;Xposed</h2><p>&#x4E00;&#x822C;&#x6765;&#x8BF4;Xposed&#x90FD;&#x662F;&#x5B89;&#x88C5;&#x5728;&#x771F;&#x673A;&#x4E0A;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x6211;&#x4E00;&#x822C;&#x5E73;&#x65F6;&#x505A;&#x5F00;&#x53D1;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x559C;&#x6B22;&#x7528;Genymotion&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x6BD4;&#x8F83;&#x5FEB;&#x3002;&#x4F46;&#x662F;Genymotion&#x7684;&#x865A;&#x62DF;&#x673A;&#x662F;&#x57FA;&#x4E8E;X86 AOSP&#x7F16;&#x8BD1;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x5BF9;&#x4E8E;Flash&#x7684;Zip&#x6587;&#x4EF6;&#x652F;&#x6301;&#x8FD8;&#x662F;&#x4E0D;&#x8DB3;&#x7684;&#x3002;Genymotion&#x5BF9;&#x4E8E;Zip&#x6587;&#x4EF6;&#xFF0C;&#x62D6;&#x62FD;&#x5230;Genymotion&#x865A;&#x62DF;&#x673A;&#x7684;&#x7A97;&#x53E3;&#x4E0A;&#xFF0C;&#x53EA;&#x662F;&#x673A;&#x68B0;&#x5730;&#x628A;Zip&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;<code>/system</code>&#x7684;&#x5B50;&#x76EE;&#x5F55;&#x3002;&#x800C;&#x5BF9;&#x4E8E;Flash Zip&#x6587;&#x4EF6;&#x6765;&#x8BF4;&#xFF0C;&#x590D;&#x5236;&#x4E4B;&#x540E;&#x8FD8;&#x9700;&#x8981;&#x6267;&#x884C;&#x5176;&#x4E2D;&#x7684;<code>update-binary</code>&#x6216;&#x8005;<code>updater-script</code>&#x3002;</p><h3 id="genyflash"><a href="0">GenyFlash</a></h3><p>&#x521A;&#x597D;Xposed&#x7684;&#x4F5C;&#x8005;&#x9488;&#x5BF9;Genymotion&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x811A;&#x672C;&#x7528;&#x4E8E;&#x5B89;&#x88C5;Flash Zip&#x5305;&#xFF0C;<a href="0">GenyFlash</a>&#x3002;&#x53EA;&#x8981;git clone&#x4E0B;&#x6765;&#xFF0C;&#x6267;&#x884C;<code>install.sh</code>&#x6216;&#x8005;<code>install.bat</code>&#x5373;&#x53EF;&#x3002;</p><h4 id="&#x5B9E;&#x73B0;&#x539F;&#x7406;">&#x5B9E;&#x73B0;&#x539F;&#x7406;</h4><p>&#x5F53;Genymotion&#x5728;&#x63A5;&#x6536;&#x5230;&#x62D6;&#x62FD;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x6267;&#x884C;<code>/system/bin</code>&#x4E0B;&#x7684;&#x4E24;&#x4E2A;&#x811A;&#x672C;&#x6587;&#x4EF6;&#xFF1A;</p><ul><li><code>check-archive.sh</code>&#xFF0C;&#x68C0;&#x67E5;&#x62D6;&#x62FD;&#x8FDB;&#x6765;&#x7684;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x662F;Flash Zip&#x3002;
+</li>
+<li><code>flash-archive.sh</code>, &#x6267;&#x884C;&#x6587;&#x4EF6;&#x7136;&#x540E;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x5230;&#x5236;&#x5B9A;&#x7684;&#x76EE;&#x5F55;&#x3002;
+</li></ul>
+<p><a href="0">GenyFlash</a>&#x901A;&#x8FC7;&#x590D;&#x5199;&#x8FD9;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x5F97;Genymotion&#x80FD;&#x6B63;&#x786E;&#x6267;&#x884C;Flash Zip&#x3002;</p><h2 id="gradle&#x4E0A;&#x5F15;&#x5165;xposed-jar&#x5305;">Gradle&#x4E0A;&#x5F15;&#x5165;Xposed JAR&#x5305;</h2><p>&#x73B0;&#x5728;&#xFF0C;Google&#x5DF2;&#x7ECF;&#x7EC8;&#x6B62;Eclipse&#x7684;&#x652F;&#x6301;&#x4E86;&#xFF0C;&#x4EE5;&#x540E;&#x5B98;&#x65B9;&#x53EA;&#x652F;&#x6301;Android Studio&#x6765;&#x5F00;&#x53D1;Android&#x3002;&#x800C;Android Studio&#x6784;&#x5EFA;Android&#x5E94;&#x7528;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;Gradle&#x7684;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5982;&#x679C;&#x7528;Android Stuido&#x5F00;&#x53D1;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E2A;Xposed Module&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x901A;&#x8FC7;Gradle&#x6765;&#x5F15;&#x5165;Xposed&#x6846;&#x67B6;&#x3002;</p><p>&#x76EE;&#x524D;&#xFF0C;Xposed&#x7684;SDK&#x8FD8;&#x662F;&#x4EE5;JAR&#x4E3A;&#x4E3B;&#xFF0C;&#x6CA1;&#x6709;&#x76F8;&#x5E94;&#x7684;Maven&#xFF0C;&#x6240;&#x4EE5;</p><pre><code class="lang-groovy">dependencies {
     <span class="hljs-comment">/* &#x8FD9;&#x91CC;JAR&#x5305;&#x5E94;&#x8BE5;&#x4EE5;Provided&#x7684;&#x5F62;&#x5F0F;&#x5F15;&#x5165; */</span>
     provided fileTree(<span class="hljs-string">dir:</span> <span class="hljs-string">&apos;libs&apos;</span>, <span class="hljs-string">include:</span> [<span class="hljs-string">&apos;*.jar&apos;</span>])   
 }</code></pre>
@@ -732,7 +827,7 @@
                 </a>
                 
                 
-                <a href="获取系统内安装应用信息的方法.html" class="navigation navigation-next " aria-label="Next page: 获取系统内安装应用信息的方法">
+                <a href="反编译APK.html" class="navigation navigation-next " aria-label="Next page: 反编译APK">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -743,7 +838,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Xposed FrameWork初探","level":"1.2.6","depth":2,"next":{"title":"获取系统内安装应用信息的方法","level":"1.2.7","depth":2,"path":"Android/获取系统内安装应用信息的方法.md","ref":"Android/获取系统内安装应用信息的方法.md","articles":[]},"previous":{"title":"Linux系统连接Android设备","level":"1.2.5","depth":2,"path":"Android/Linux系统连接Android设备.md","ref":"Android/Linux系统连接Android设备.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Android/Xposed FrameWork初探.md","mtime":"2016-09-27T13:47:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-10T15:54:29.676Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Xposed FrameWork初探","level":"1.2.7","depth":2,"next":{"title":"反编译APK","level":"1.2.8","depth":2,"path":"Android/反编译APK.md","ref":"Android/反编译APK.md","articles":[]},"previous":{"title":"Linux系统连接Android设备","level":"1.2.6","depth":2,"path":"Android/Linux系统连接Android设备.md","ref":"Android/Linux系统连接Android设备.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Android/Xposed FrameWork初探.md","mtime":"2016-11-27T02:47:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2017-01-08T15:49:10.705Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
