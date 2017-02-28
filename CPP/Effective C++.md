@@ -51,6 +51,10 @@ public:
 
 不管你信仰那一个流派，切忌不能混合使用 `class` 和 `struct` 。在大量使用前导声明的情况下，一旦一个使用 `struct` 的类改为 `class` ，所有的前置声明都需要修改。
 
+## POD(Plain Old Data Structure)
+
+POD是C++里定义的一个兼容C Struct的内存数据结构。
+
 ## C++11新特性
 
 ### 新的using用法

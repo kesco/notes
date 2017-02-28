@@ -28,6 +28,8 @@
   * [Pthread实战](CPP/Pthread实战.md)
   * [如何写Makefile](CPP/如何写Makefile.md)
   * [GCC入门](CPP/GCC入门.md)
+  * [libXML2速查笔记](CPP/libXML2速查笔记.md)
+  * [C++的格式化工具clang-format](CPP/C++的格式化工具clang-format.md)
 * [Emacs](Emacs/README.md)
   * [Org-Mode简明手册](Emacs/Org-Mode简明手册.md)
 * [Git](Git/README.md)
