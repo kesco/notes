@@ -55,6 +55,13 @@ public:
 
 POD是C++里定义的一个兼容C Struct的内存数据结构。
 
+## std::string用法
+
+## Windows的Dll宏
+
+`__declspec(dllexport)`是标志着这个方法或类要从DLL提供给用户调用。
+`__declspec(dllimport)`是标志申明要从DLL引用方法或者类，有助于编译器优化。
+
 ## C++11新特性
 
 ### 新的using用法

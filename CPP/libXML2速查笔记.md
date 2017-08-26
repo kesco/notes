@@ -2,3 +2,4 @@
 
 ## 具体API
 
+1. `xmlChar`

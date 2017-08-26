@@ -200,6 +200,30 @@ RUN pwd
 
 则最终路径为 /a/b/c。
 
+## Docker CLI
+
+### 命令行运行bash
+
+```sh
+docker run -i -t ubuntu:14.04 /bin/bash
+```
+
+- docker run - 运行一个容器
+- -t - 分配一个（伪）tty (link is external)
+- -i - 交互模式 (so we can interact with it)
+- ubuntu:14.04 - 使用 ubuntu 基础镜像 14.04
+- /bin/bash - 运行命令 bash shell
+
+## Docker配置
+
+### 设置代理
+
+```json
+{
+  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]    /* 中科大镜像 */
+}
+```
+
 ## Docker Machine
 
 `Docker Machine` 是目前在 `Windows` 和 `OS X` 上运行 `Docker` 的官方解决方案。
